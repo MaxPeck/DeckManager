@@ -564,7 +564,7 @@ namespace DeckManagerOutput
 
                 PlayerReadonlyListBox.BeginUpdate();
                 PlayerReadonlyListBox.DataSource = Program.GManager.CurrentGameState.Players;
-                PlayerReadonlyListBox.SelectedIndex = 0;
+                if(PlayerReadonlyListBox.Items.Count != 0) PlayerReadonlyListBox.SelectedIndex = 0;
                 PlayerReadonlyListBox.EndUpdate();
 
                 FoodUpDown.Value = Program.GManager.CurrentGameState.Food;
