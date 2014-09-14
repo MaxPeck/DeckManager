@@ -55,7 +55,10 @@ namespace DeckManager
 
         public GameState CurrentGameState
         {
-            get { return GameStates.Last(); }
+            get {
+                if (GameStates == null) return NewGame(new List<Player>(), 0, false);
+                return GameStates.Last(); 
+            }
         }
 
         public bool SaveGame(string pathName)

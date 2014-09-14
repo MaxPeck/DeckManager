@@ -716,7 +716,7 @@ namespace DeckManagerOutput
         private void PassTurnButtonClick(object sender, EventArgs e)
         {
             var dialogResult = MessageBox.Show(Resources.GameWindow_PassTurnButtonClick_PassTurnInfo, Resources.GameWindow_PassTurnButtonClick_PassTurnTitle, MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            if (dialogResult == DialogResult.Yes && PlayerReadonlyListBox.Items.Count > 0)
             {
                 if(PlayerReadonlyListBox.SelectedIndex == (PlayerReadonlyListBox.Items.Count - 1))
                     PlayerReadonlyListBox.SelectedIndex = 0;
