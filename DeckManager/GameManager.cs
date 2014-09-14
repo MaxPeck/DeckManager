@@ -56,7 +56,11 @@ namespace DeckManager
         public GameState CurrentGameState
         {
             get {
-                if (GameStates == null) return NewGame(new List<Player>(), 0, false);
+                if (GameStates == null)
+                {
+                    if (_logger.IsDebugEnabled) _logger.Debug("No game actually started, giving them a 0-player game so we can continue");
+                    return NewGame(new List<Player>(), 0, false);
+                }
                 return GameStates.Last(); 
             }
         }
